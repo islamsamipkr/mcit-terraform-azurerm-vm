@@ -237,6 +237,7 @@ resource "azurerm_public_ip" "vm" {
   resource_group_name          = "${azurerm_resource_group.vm.name}"
   public_ip_address_allocation = "${var.public_ip_address_allocation}"
   domain_name_label            = "${element(var.public_ip_dns, count.index)}"
+  allocation_method   = "Static"
 }
 
 resource "azurerm_network_interface" "vm" {
